@@ -14,5 +14,16 @@
   <body>
     <body class="<%= controller_name %> <%= action_name %>">
     <%= yield %>
+
+    <div>
+    <input type="text" id="new-task-content" placeholder="Enter task description">
+    <button id="add-task-button">Add Task</button>
+  </div>
+
+  <div>
+    <button id="toggle-all">All Tasks</button>
+    <button id="toggle-active">Active Tasks</button>
+    <button id="toggle-complete">Complete Tasks</button>
+  </div>
   </body>
 </html>
