@@ -46,7 +46,7 @@ export var showTaskId = function (taskId, successCB, errorCB) {
 
 export var updateTaskId = function (taskId, successCB, errorCB) {
   var request = {
-    type: 'UPDATE',
+    type: 'PUT',
     url: 'api/tasks/' + taskId + '?api_key=1',
     success: successCB,
     error: errorCB
@@ -57,7 +57,7 @@ export var updateTaskId = function (taskId, successCB, errorCB) {
 
 export var TaskMark_Complete = function (taskId, successCB, errorCB) {
   var request = {
-    type: 'MARK_COMPLETE',
+    type: 'PUT',
     url: 'api/tasks/' + taskId + '?api_key=1',
     success: successCB,
     error: errorCB
@@ -79,7 +79,7 @@ export var TaskActive= function (taskId, successCB, errorCB) {
 
 export var Destroy= function (taskId, successCB, errorCB) {
   var request = {
-    type: 'DESTROY',
+    type: 'delete',
     url: 'api/tasks/' + taskId + '?api_key=1',
     success: successCB,
     error: errorCB
