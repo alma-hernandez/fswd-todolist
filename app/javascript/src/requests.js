@@ -36,7 +36,7 @@ export var postTask = function (content, successCB, errorCB) {
 export var showTaskId = function (taskId, successCB, errorCB) {
   var request = {
     type: 'GET',
-    url: 'api/tasks/' + taskId + '?api_key=1', // Assuming you need to pass the task ID in the URL
+    url: 'api/tasks/' + taskId + '?api_key=1', 
     success: successCB,
     error: errorCB
   }
