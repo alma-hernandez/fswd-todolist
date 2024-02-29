@@ -10,6 +10,8 @@ import {
   Destroy,
 } from "./requests.js";
 
+
+
 indexTasks(function (response) {
   var htmlString = response.tasks.map(function(task) {
     return "<div class='col-12 mb-3 p-2 border rounded task' data-id='" + task.id + "'> \
@@ -52,4 +54,22 @@ TaskActive(function (resposne) {
 });
 });
 
+
+
+
+
+const Tasks = () => {
+  const [showAll, setShowAll] = useState([]);
+  const [showActive, setShowActive] = useState([]);
+  const [showComplete, setShowComplete] = useState([]);
+
+  const handleClick = () => {
+    if (input.trim != "") {
+      showAll(prevShowAll => prevShowAll + input)
+    }
+  }
+
+  
+
+  }
 

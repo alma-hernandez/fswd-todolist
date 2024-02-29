@@ -17,13 +17,13 @@
 
     <div>
     <input type="text" id="new-task-content" placeholder="Enter task description">
-    <button id="add-task-button">Add Task</button>
+    <button onClick={handleClick} id="add-task-button">Add Task</button>
   </div>
 
   <div>
-    <button id="toggle-all">All Tasks</button>
-    <button id="toggle-active">Active Tasks</button>
-    <button id="toggle-complete">Complete Tasks</button>
+    <button onClick={showAll} id="toggle-all">All Tasks</button>
+    <button onClick={showActive} id="toggle-active">Active Tasks</button>
+    <button onClick={showComplete} id="toggle-complete">Complete Tasks</button>
   </div>
   </body>
 </html>
