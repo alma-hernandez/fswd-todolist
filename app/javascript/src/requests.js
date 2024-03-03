@@ -58,7 +58,7 @@ export var updateTaskId = function (taskId, successCB, errorCB) {
 export var TaskMark_Complete = function (taskId, successCB, errorCB) {
   var request = {
     type: 'PUT',
-    url: 'api/tasks/' + taskId + '?api_key=1',
+    url: 'api/tasks/' + taskId + '/mark_complete?api_key=1',
     success: successCB,
     error: errorCB
   }
@@ -66,7 +66,7 @@ export var TaskMark_Complete = function (taskId, successCB, errorCB) {
   $.ajax(request);
 };
 
-export var TaskActive= function (taskId, successCB, errorCB) {
+export var TaskActive = function (taskId, successCB, errorCB) {
   var request = {
     type: 'PUT',
     url: 'api/tasks/' + taskId + '?api_key=1',
@@ -77,7 +77,7 @@ export var TaskActive= function (taskId, successCB, errorCB) {
   $.ajax(request);
 };
 
-export var Destroy= function (taskId, successCB, errorCB) {
+export var Destroy = function (taskId, successCB, errorCB) {
   var request = {
     type: 'DELETE',
     url: 'api/tasks/' + taskId + '?api_key=1',
