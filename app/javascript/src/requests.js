@@ -69,7 +69,7 @@ export var TaskMark_Complete = function (taskId, successCB, errorCB) {
 export var TaskActive = function (taskId, successCB, errorCB) {
   var request = {
     type: 'PUT',
-    url: 'api/tasks/' + taskId + '?api_key=1',
+    url: 'api/tasks/' + taskId + '/mark_active?api_key=1',
     success: successCB,
     error: errorCB
   }

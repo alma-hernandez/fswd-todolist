@@ -14,7 +14,7 @@ $(function(){
   $("#add-task-button").on("click", handleClick);
   $(document).on("click", '.complete-task', handleCompleteClick);
   $(document).on("click", '#toggle-all', allTasks);
-  $(document).on("click", '#toggle-active', TaskActive);
+  $(document).on("click", '#toggle-active', allActiveTasks);
   $(document).on("click", '#toggle-complete', allCompletedTasks);
 })
 
@@ -26,12 +26,12 @@ indexTasks(function (response) {
   $("#tasks").html(htmlString);
 });
 }
-
-function TaskActive() {
+ 
+function allActiveTasks() {
 
   indexTasks(function(response) {
-    var activeTasks = response.tasks.filter(task => !task.completed);
-    var htmlString = activeTasks.map(task => GenerateTaskHTML(task));
+    var incompleteTasks = response.tasks.filter(task => !task.completed);
+    var htmlString = incompleteTasks.map(task => GenerateTaskHTML(task));
     $("#tasks").html(htmlString);
   });
 }
@@ -44,8 +44,6 @@ indexTasks(function(response) {
   $("#tasks").html(htmlString);
 });
 }
-
-
 
 
 export function handleClick() {
