@@ -1,0 +1,9 @@
+ => 
+[32m#<Task:0x00007fb848036198[0m
+ id: [34m[1m4[0m,
+ user_id: [34m[1m1[0m,
+ content: [31m[1m"[0m[31mdddd[0m[31m[1m"[0m,
+ completed: [36m[1mtrue[0m,
+ due: [36m[1mnil[0m,
+ created_at: Sun, 03 Mar 2024 03:57:08.350035000 UTC +00:00,
+ updated_at: Sun, 03 Mar 2024 04:34:46.551284000 UTC +00:00[32m>[0m 
