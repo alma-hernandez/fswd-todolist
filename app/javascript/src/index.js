@@ -15,37 +15,37 @@ $(function(){
   $(document).on("click", '.complete-task', handleCompleteClick);
   $(document).on("click", '#toggle-all', allTasks);
   $(document).on("click", '#toggle-active', TaskActive);
-  $(document).on("click", '#toggle-complete', TaskMark_Complete);
+  $(document).on("click", '#toggle-complete', allCompletedTasks);
 })
 
 
 function allTasks(){
-
+                                                                                                          
 indexTasks(function (response) {
   var htmlString = response.tasks.map(t => GenerateTaskHTML(t));
   $("#tasks").html(htmlString);
 });
 }
 
-/*function TaskActive() {
+function TaskActive() {
 
   indexTasks(function(response) {
     var activeTasks = response.tasks.filter(task => !task.completed);
     var htmlString = activeTasks.map(task => GenerateTaskHTML(task));
-    $("$tasks").html(htmlString);
+    $("#tasks").html(htmlString);
   });
 }
 
 
-function TaskMark_Complete() {
+function allCompletedTasks() {
 indexTasks(function(response) {
-  var completedTasks = response.tasks.map(t => task.completed);
-  var htmlString = activeTasks.map(task => GenerateTaskHTML(task));
-  $("$tasks").html(htmlString);
+  var completedTasks = response.tasks.filter(task => task.completed);
+  var htmlString = completedTasks.map(task => GenerateTaskHTML(task));
+  $("#tasks").html(htmlString);
 });
 }
 
-*/
+
 
 
 export function handleClick() {
