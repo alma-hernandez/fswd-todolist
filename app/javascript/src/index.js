@@ -10,36 +10,12 @@ import {
   Destroy,
 } from "./requests.js";
 
-
-
-
-
-// TaskMark_Complete(function (response) {
-//   var htmlString = response.tasks.map(function(task) {
-//     return "<div class='col-12 mb-3 p-2 border rounded task' data-id='" + task.id + "'> \
-//       " + task.content + "\
-//       </div>";
-//   });
-
-//   $("#tasks").html(htmlString);
-// });
-
-
-
-// TaskActive(function (resposne) {
-//   var htmlString = response.tasks.map(function(task) {
-//     return "<div class='col-12 mb-3 p-2 border rounded task' data-id='" + task.id + "'> \
-//       " + task.content + "\
-//       </div>";
-//   });
-
-//   $("#tasks").html(htmlString);
-// });
-// });
 $(function(){
   $("#add-task-button").on("click", handleClick);
   $(document).on("click", '.complete-task', handleCompleteClick);
   $(document).on("click", '#toggle-all', allTasks);
+  $(document).on("click", '#toggle-active', TaskActive);
+  $(document).on("click", '#toggle-complete', TaskMark_Complete);
 })
 
 
@@ -47,11 +23,29 @@ function allTasks(){
 
 indexTasks(function (response) {
   var htmlString = response.tasks.map(t => GenerateTaskHTML(t));
-   
-
   $("#tasks").html(htmlString);
 });
 }
+
+/*function TaskActive() {
+
+  indexTasks(function(response) {
+    var activeTasks = response.tasks.filter(task => !task.completed);
+    var htmlString = activeTasks.map(task => GenerateTaskHTML(task));
+    $("$tasks").html(htmlString);
+  });
+}
+
+
+function TaskMark_Complete() {
+indexTasks(function(response) {
+  var completedTasks = response.tasks.map(t => task.completed);
+  var htmlString = activeTasks.map(task => GenerateTaskHTML(task));
+  $("$tasks").html(htmlString);
+});
+}
+
+*/
 
 
 export function handleClick() {
