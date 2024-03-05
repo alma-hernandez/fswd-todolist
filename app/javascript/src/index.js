@@ -12,12 +12,6 @@ import {
 
 
 
-indexTasks(function (response) {
-  var htmlString = response.tasks.map(t => GenerateTaskHTML(t));
-   
-
-  $("#tasks").html(htmlString);
-});
 
 
 // TaskMark_Complete(function (response) {
@@ -45,7 +39,20 @@ indexTasks(function (response) {
 $(function(){
   $("#add-task-button").on("click", handleClick);
   $(document).on("click", '.complete-task', handleCompleteClick);
+  $(document).on("click", '#toggle-all', allTasks);
 })
+
+
+function allTasks(){
+
+indexTasks(function (response) {
+  var htmlString = response.tasks.map(t => GenerateTaskHTML(t));
+   
+
+  $("#tasks").html(htmlString);
+});
+}
+
 
 export function handleClick() {
   const content = document.getElementById("new-task-content").value;
